@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+# Version is the desktop specification version not the software one
+Version=1.0
+Name=@name@
+Exec=@exec@ %f
+Categories=@categories@
+Icon=@icon@
+

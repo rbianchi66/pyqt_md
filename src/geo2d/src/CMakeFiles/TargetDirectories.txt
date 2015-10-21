@@ -1,0 +1,2 @@
+/home/rbianchi/projects/draw_areas/src/geo2d/src/CMakeFiles/geo2d.dir
+/home/rbianchi/projects/draw_areas/src/geo2d/src/test/CMakeFiles/test.dir

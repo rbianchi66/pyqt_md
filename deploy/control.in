@@ -1,0 +1,10 @@
+Package: @name@
+Section: misc
+Version: @version@
+Priority: optional
+Architecture: @arch@
+Depends: binutils
+Maintainer: @maintainer@
+Description: @description@
+Installed-Size: @installed_size@
+
