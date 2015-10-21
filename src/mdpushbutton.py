@@ -23,7 +23,7 @@ class MainWindow(QMainWindow):
         
         self.main_layout = QHBoxLayout()
         self.frame.setLayout(self.main_layout)
-        self.widget = MDPushButton("Test")
+        self.widget = MDPushButton("TEST")
         self.main_layout.addStretch(10)
         self.main_layout.addWidget(self.widget)
         self.main_layout.addStretch(10)
