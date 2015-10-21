@@ -1,25 +1,37 @@
 QPushButton, QPushButton:focus, QPushButton:focus {
   background-color: #E0E0E0;
-  border: 1px;
   color: black;
   padding: 3px 20px;
+  font-family: "roboto";
+  font-size: 12;
+  border: 1px;
+  border-radius: 2px;
 }
 
 
 QPushButton:hover, QPushButton:hover:focus {
   background-color: #2196f3;
-  border-color: #ffffff;
+  font-family: "roboto";
+  font-size: 12;
+  border: 1px;
+  border-radius: 2px;
 }
 
 QPushButton:pressed,
 QPushButton:pressed:focus {
   background-color: #f50057;
-  border: none;
   color: white;
+  font-family: "roboto";
+  font-size: 12;
+  border: 1px;
+  border-radius: 2px;
 }
 
 QPushButton:disabled {
-    color: #cccccc;
-    background-color: #cccccc;
-    border: none;
+  color: #cccccc;
+  background-color: #cccccc;
+  font-family: "roboto";
+  font-size: 12;
+  border: 1px;
+  border-radius: 2px;
 }
