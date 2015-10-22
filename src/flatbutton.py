@@ -5,16 +5,10 @@ import sys
 from PyQt4.Qt import *
 
 
-class RaisedButton(QPushButton):
+class FlatButton(QPushButton):
     def __init__(self, *args):
         QPushButton.__init__(self, *args)
-
-        self.effect = QGraphicsDropShadowEffect(self)
-        self.effect.setOffset(1,3)
-        self.effect.setBlurRadius(15)
-        self.setGraphicsEffect(self.effect)
-        self.setMinimumSize(64, 36)
-
+        self.setObjectName("RaisedButton")
 
 class MainWindow(QMainWindow):
     def __init__(self, *args):
@@ -29,7 +23,7 @@ class MainWindow(QMainWindow):
         
         self.main_layout = QHBoxLayout()
         self.frame.setLayout(self.main_layout)
-        self.widget = RaisedButton("TEST")
+        self.widget = FlatButton("FLAT BUTTON")
         self.main_layout.addStretch(10)
         self.main_layout.addWidget(self.widget)
         self.main_layout.addStretch(10)

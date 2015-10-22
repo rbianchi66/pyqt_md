@@ -1,5 +1,8 @@
+/**
+ *  RaisedButton
+ */
 RaisedButton, RaisedButton:hover, RaisedButton:focus, RaisedButton:hover:focus {
-  background-color: #E0E0E0;
+  background-color: rgba(153,153,153,20%);
   color: black;
   padding: 3px 16px;
   font-family: "roboto";
@@ -9,7 +12,7 @@ RaisedButton, RaisedButton:hover, RaisedButton:focus, RaisedButton:hover:focus {
 }
 
 RaisedButton:pressed, RaisedButton:pressed:focus {
-  background-color: #999999;
+  background-color: rgba(153,153,153,40%);
 }
 
 RaisedButton:disabled {
@@ -19,4 +22,38 @@ RaisedButton:disabled {
   font-size: 14;
   border: 1px;
   border-radius: 2px;
+}
+
+/**
+ *  FlatButton
+ */
+FlatButton, FlatButton:focus, FlatButton:focus {
+  background-color: none;
+  border: none;
+  font-family: "roboto";
+  font-size: 16;
+  color: black;
+  padding: 3px 16px;
+}
+
+
+FlatButton:hover, FlatButton:hover:focus {
+  background-color: rgba(153,153,153,20%);
+  border: 1px;
+  border-radius: 2px;
+}
+
+
+
+FlatButton:pressed,
+FlatButton:pressed:focus {
+  background-color: rgba(153,153,153,40%);
+  border: 1px;
+  border-radius: 2px;
+}
+
+FlatButton:disabled {
+    color: #cccccc;
+    background-color: #cccccc;
+    border: none;
 }
