@@ -23,9 +23,12 @@ class MainWindow(QMainWindow):
         
         self.main_layout = QHBoxLayout()
         self.frame.setLayout(self.main_layout)
-        self.widget = FlatButton("FLAT BUTTON")
+        self.b1 = FlatButton("FLAT BUTTON")
+        self.b2 = FlatButton("DISABLED BUTTON")
+        self.b2.setEnabled(False)
         self.main_layout.addStretch(10)
-        self.main_layout.addWidget(self.widget)
+        self.main_layout.addWidget(self.b1)
+        self.main_layout.addWidget(self.b2)
         self.main_layout.addStretch(10)
         
 class App(QApplication):

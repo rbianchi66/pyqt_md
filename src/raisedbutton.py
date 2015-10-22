@@ -29,9 +29,12 @@ class MainWindow(QMainWindow):
         
         self.main_layout = QHBoxLayout()
         self.frame.setLayout(self.main_layout)
-        self.widget = RaisedButton("TEST")
+        self.b1 = RaisedButton("RAISED BUTTON")
+        self.b2 = RaisedButton("DISABLED BUTTON")
+        self.b2.setEnabled(False)
         self.main_layout.addStretch(10)
-        self.main_layout.addWidget(self.widget)
+        self.main_layout.addWidget(self.b1)
+        self.main_layout.addWidget(self.b2)
         self.main_layout.addStretch(10)
         
 class App(QApplication):
@@ -44,7 +47,7 @@ class App(QApplication):
             ss = open("material.qss","r")
             self.setStyleSheet(ss.read())
         
-        W = 200
+        W = 400
         H = 200
         self.main.setGeometry(W, H, W, H)
         self.main.show()

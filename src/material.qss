@@ -16,8 +16,8 @@ RaisedButton:pressed, RaisedButton:pressed:focus {
 }
 
 RaisedButton:disabled {
-  color: #cccccc;
-  background-color: #cccccc;
+  color: rgba(0,0,0,26%);
+  background-color: rgba(0,0,0,12%);
   font-family: "roboto";
   font-size: 14;
   border: 1px;
@@ -53,7 +53,7 @@ FlatButton:pressed:focus {
 }
 
 FlatButton:disabled {
-    color: #cccccc;
-    background-color: #cccccc;
+    color: rgba(0,0,0,26%);
+    background-color: none;
     border: none;
 }
