@@ -83,3 +83,39 @@ FloatingActionButton:disabled {
   border: 1px;
   border-radius: 2px;
 }
+
+/**
+ *  FloatingActionButton
+ */
+LineEdit, LineEdit:hover {
+    border: none;
+    padding-bottom: 2px;
+    background-color:rgba(0,0,0,0);
+    font-family: "roboto";
+}
+
+LineEdit:editable{
+    border: none;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #3F51B5;
+    font-size: 20px;
+    selection-color: #3F51B5;
+}
+
+LineEdit:disabled{
+    border: 0px solid white;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #eeeeee;
+}
+
+LineEdit:focus{
+    border: 0px solid white;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #3F51B5;
+}
+LineEdit:pressed {
+    border: none;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #3F51B5;
+}
+
