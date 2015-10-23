@@ -92,12 +92,12 @@ LineEdit, LineEdit:hover {
     padding-bottom: 2px;
     background-color:rgba(0,0,0,0);
     font-family: "roboto";
+    border-bottom: 2px solid rgba(153,153,153,20%);    
 }
 
 LineEdit:editable{
     border: none;
     padding-bottom: 2px;
-    border-bottom: 2px solid #3F51B5;
     font-size: 20px;
     selection-color: #3F51B5;
 }
