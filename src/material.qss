@@ -57,3 +57,29 @@ FlatButton:disabled {
     background-color: none;
     border: none;
 }
+
+/**
+ *  FloatingActionButton
+ */
+FloatingActionButton, FloatingActionButton:hover, FloatingActionButton:focus, FloatingActionButton:hover:focus {
+  background-color: rgba(153,153,153,20%);
+  color: black;
+  padding: 3px 16px;
+  font-family: "roboto";
+  font-size: 14;
+  border: 1px;
+  border-radius: 2px;
+}
+
+FloatingActionButton:pressed, FloatingActionButton:pressed:focus {
+  background-color: rgba(153,153,153,40%);
+}
+
+FloatingActionButton:disabled {
+  color: rgba(0,0,0,26%);
+  background-color: rgba(0,0,0,12%);
+  font-family: "roboto";
+  font-size: 14;
+  border: 1px;
+  border-radius: 2px;
+}
