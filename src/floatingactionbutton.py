@@ -2,14 +2,15 @@
 #-*- coding: utf-8 -*-
 
 import sys
+import math
 from PyQt4.Qt import *
+from raisedbutton import RaisedButton
 
-
-class FloatingActionButton(QPushButton):
+class FloatingActionButton(RaisedButton):
     def __init__(self, radius=50, icon=None, *args):
         super(FloatingActionButton, self).__init__(*args)
         self.color = QColor(153,153,153,255*0.2)
-        self.pressed_color = QColor(153,153,153,255*0.4) 
+        self.pressed_color = QColor(153,153,153,255*0.2) 
         if icon:
             self.pixmap = QPixmap(icon)
             self.disabled_pixmap = QPixmap(icon) 
@@ -30,13 +31,16 @@ class FloatingActionButton(QPushButton):
         self.setMinimumSize(self.size())
         self.effect_size = self.radius
         self.pressed = False
+        self.region = QRegion(1, 1, 
+                              self.radius, self.radius, 
+                                  QRegion.Ellipse)        
 
     def paintEvent(self, event):
-        painter = QPainter()
-        painter.begin(self)
+        painter = QPainter(self)
         painter.setRenderHint(QPainter.HighQualityAntialiasing)
         painter.setRenderHint(QPainter.Antialiasing)
         painter.setRenderHint(QPainter.SmoothPixmapTransform)
+        
         if self.pressed:
             painter.setBrush(self.pressed_color)
             painter.setPen(QPen(self.pressed_color))
@@ -44,20 +48,23 @@ class FloatingActionButton(QPushButton):
             painter.setBrush(self.color)
             painter.setPen(QPen(self.color))
         painter.drawEllipse(1, 1, self.radius - 1, self.radius - 1)
-        
         if self.isEnabled():
             painter.drawPixmap(QRect(14, 14, self.radius / 2, self.radius / 2), self.pixmap)
         else:
             painter.drawPixmap(QRect(14, 14, self.radius / 2, self.radius / 2), self.disabled_pixmap)
+
+        if self.pressed:
+            self.drawPressed()
+
         painter.end()
 
-    def mousePressEvent(self, e):
-        self.pressed = True
-        self.update()
-
-    def mouseReleaseEvent(self, e):
-        self.pressed = False
-        self.update()
+#     def mousePressEvent(self, e):
+#         self.pressed = True
+#         self.update()
+# 
+#     def mouseReleaseEvent(self, e):
+#         self.pressed = False
+#         self.update()
 
 class MainWindow(QMainWindow):
     def __init__(self, *args):
