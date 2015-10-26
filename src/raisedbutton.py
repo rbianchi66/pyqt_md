@@ -53,7 +53,7 @@ class RaisedButton(QPushButton):
         self.pressed = True
         self.press_point = e.pos()
         self.press_timer = QTimer(self)
-        self.press_timer.setInterval(10)
+        self.press_timer.setInterval(20)
         self.connect(self.press_timer, SIGNAL("timeout()"), self.updatePressEffect)
         self.press_timer.start()
         self.update()
