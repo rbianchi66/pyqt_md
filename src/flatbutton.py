@@ -3,11 +3,12 @@
 
 import sys
 from PyQt4.Qt import *
+from raisedbutton import RaisedButton
 
 
-class FlatButton(QPushButton):
+class FlatButton(RaisedButton):
     def __init__(self, *args):
-        QPushButton.__init__(self, *args)
+        RaisedButton.__init__(self, *args)
         self.setObjectName("RaisedButton")
 
 class MainWindow(QMainWindow):
