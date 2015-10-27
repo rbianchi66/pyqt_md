@@ -5,7 +5,7 @@ RaisedButton, RaisedButton:hover, RaisedButton:focus, RaisedButton:hover:focus {
   background-color: rgba(153,153,153,20%);
   color: black;
   padding: 3px 16px;
-  font-family: "roboto";
+  font-family: "Roboto";
   font-size: 14;
   border: 1px;
   border-radius: 2px;
@@ -18,7 +18,7 @@ RaisedButton:pressed, RaisedButton:pressed:focus {
 RaisedButton:disabled {
   color: rgba(0,0,0,26%);
   background-color: rgba(0,0,0,12%);
-  font-family: "roboto";
+  font-family: "Roboto";
   font-size: 14;
   border: 1px;
   border-radius: 2px;
@@ -117,5 +117,18 @@ LineEdit:pressed {
     border: none;
     padding-bottom: 2px;
     border-bottom: 2px solid #3F51B5;
+}
+
+/**
+ *  Card
+ */
+Card {
+    background-color: rgb(255,255,255);
+    padding: 3px 16px;
+    padding-bottom: 2px;
+    font-family: "roboto";
+    border-bottom: 2px solid rgba(153,153,153,40%);    
+    border: 1px;
+    border-radius: 2px;
 }
 
