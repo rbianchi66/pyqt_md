@@ -9,7 +9,6 @@ from raisedbutton import RaisedButton
 class FlatButton(RaisedButton):
     def __init__(self, *args):
         RaisedButton.__init__(self, *args)
-        self.setObjectName("RaisedButton")
 
 class MainWindow(QMainWindow):
     def __init__(self, *args):
