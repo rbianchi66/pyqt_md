@@ -134,6 +134,7 @@ Card {
 
 /**
  *  CheckBox
+ */
 CheckBox, CheckBox:focus, CheckBox:focus {
   background-color: none;
   border: none;
@@ -143,9 +144,13 @@ CheckBox, CheckBox:focus, CheckBox:focus {
   padding: 3px 16px;
 }
 
+CheckBox:pressed, RaisedButton:pressed:focus {
+  background-color: rgba(153,153,153,40%);
+}
+
 
 CheckBox:hover, CheckBox:hover:focus {
-  background-color: rgba(153,153,153,20%);
+  background-color: rgba(153,153,0,20%);
   border: 1px;
   border-radius: 2px;
 }
@@ -155,4 +160,3 @@ CheckBox:disabled {
     background-color: none;
     border: none;
 }
- */
