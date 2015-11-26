@@ -8,21 +8,22 @@ from PyQt4.Qt import *
 class CheckBox(QWidget):
     def __init__(self, *args):
         QWidget.__init__(self, *args)
-        self.focused_color = QColor(153,153,153,255*0.2) 
-        self.pressed_color = QColor(153,153,153,255*0.4) 
         self.unchecked_icon = QPixmap("icons/ic_check_box_outline_blank_black_24dp/web/ic_check_box_outline_blank_black_24dp_1x.png")
         self.checked_icon = QPixmap("icons/ic_check_box_black_24dp/web/ic_check_box_black_24dp_1x.png")
         self.checked = False
         self.pressed = False
         self.focused = False
-        self.setMinimumWidth(24*3)
-        self.setMaximumHeight(24*3)
+        self.setMinimumWidth(36)
+        self.setMaximumHeight(36)
         self.setMouseTracking(True)
         self.press_effect = 0.0
         self.press_point = None
         self.press_timer = None
-        r = max(self.width(), self.height())/2 
-        self.region = QRegion(0, 0, r, r, QRegion.Ellipse)        
+        r = 36 
+        self.region = QRegion(0, 0, r, r, QRegion.Ellipse)
+        ss = open("checkbox.qss","r")
+        self.setStyleSheet(ss.read())
+        print self.styleSheet()        
 
     def enterEvent(self, e):
         self.focused = True
@@ -55,12 +56,12 @@ class CheckBox(QWidget):
         painter.setRenderHint(QPainter.HighQualityAntialiasing)
         painter.setRenderHint(QPainter.Antialiasing)
         painter.setRenderHint(QPainter.SmoothPixmapTransform)
-        painter.setPen(Qt.black)
+        painter.setPen(self.palette().color(QPalette.Window))
 
         if self.focused:
-            r = max(self.width(), self.height())/2 
-            painter.setBrush(self.focused_color)
-            painter.setPen(self.focused_color)
+            r = max(self.width(), self.height()) 
+            painter.setBrush(self.palette().color(QPalette.Window))
+            painter.setPen(self.palette().color(QPalette.Window))
             painter.drawEllipse(0, 0, r, r)
         if self.checked:
             painter.drawPixmap(QRect(6, 6, 24, 24), self.checked_icon)
@@ -76,10 +77,11 @@ class CheckBox(QWidget):
         painter.setRenderHint(QPainter.HighQualityAntialiasing)
         painter.setRenderHint(QPainter.Antialiasing)
         painter.setRenderHint(QPainter.SmoothPixmapTransform)
-        painter.setBrush(self.pressed_color)
-        painter.setPen(QPen(self.pressed_color))
-        r = max(self.width(), self.height())
-        print "r:", r*self.press_effect 
+        col = self.palette().color(QPalette.Window).darker()
+        col.setAlpha(50)
+        painter.setBrush(col)
+        painter.setPen(QPen(col))
+        r = max(self.width(), self.height())*2
         painter.drawEllipse(self.press_point, r*self.press_effect, r*self.press_effect) 
         painter.end()
 
@@ -103,8 +105,11 @@ class MainWindow(QMainWindow):
         self.main_layout = QHBoxLayout()
         self.frame.setLayout(self.main_layout)
         self.c1 = CheckBox(self)
+        self.c2 = CheckBox(self)
+        self.c2.setEnabled(False)
         self.main_layout.addStretch(10)
         self.main_layout.addWidget(self.c1)
+        self.main_layout.addWidget(self.c2)
         self.main_layout.addStretch(10)
         
 class App(QApplication):
@@ -113,8 +118,8 @@ class App(QApplication):
         QApplication.__init__(self, *args)
         self.main = MainWindow()
         
-        if os.path.exists("material.qss"):
-            ss = open("material.qss","r")
+        if os.path.exists("checkbox.qss"):
+            ss = open("checkbox.qss","r")
             self.setStyleSheet(ss.read())
         
         W = 200

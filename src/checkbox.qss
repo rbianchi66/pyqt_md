@@ -1,0 +1,25 @@
+CheckBox, CheckBox:focus, CheckBox:focus {
+  background-color: none;
+  border: none;
+  font-family: "roboto";
+  font-size: 16;
+  color: black;
+  padding: 3px 16px;
+}
+
+CheckBox:pressed, RaisedButton:pressed:focus {
+  background-color: rgba(153,153,153,40%);
+}
+
+
+CheckBox:hover, CheckBox:hover:focus {
+  background-color: rgba(153,153,0,20%);
+  border: 1px;
+  border-radius: 2px;
+}
+
+CheckBox:disabled {
+    color: rgba(0,0,0,26%);
+    background-color: none;
+    border: none;
+}
